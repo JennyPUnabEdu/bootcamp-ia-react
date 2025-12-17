@@ -7,6 +7,7 @@ import {
     Star,
     Terminal,
     Zap,
+    Home as HomeIcon, // Renombrado para evitar conflicto con el nombre del componente
 } from 'lucide-react';
 
 /**
@@ -30,7 +31,7 @@ const Home = () => {
             color: 'from-blue-600 to-purple-600',
             icon: <Terminal size={32} />,
             path: '/modulo1',
-            linkPaper: '/papers/modulo1.pdf',
+            linkPaper: '/curso-ia/papers/modulo1.pdf',
         },
         {
             day: 'Módulo 2',
@@ -39,7 +40,7 @@ const Home = () => {
             color: 'from-teal-600 to-emerald-600',
             icon: <Layout size={32} />,
             path: '/modulo2',
-            linkPaper: '/papers/modulo2.pdf',
+            linkPaper: '/curso-ia/papers/modulo2.pdf',
         },
         {
             day: 'Módulo 3',
@@ -48,7 +49,7 @@ const Home = () => {
             color: 'from-orange-500 to-indigo-600',
             icon: <Zap size={32} />,
             path: '/modulo3',
-            linkPaper: '/papers/modulo3.pdf',
+            linkPaper: '/curso-ia/papers/modulo3.pdf',
         },
         {
             day: 'Módulo 4',
@@ -57,22 +58,42 @@ const Home = () => {
             color: 'from-red-600 to-amber-500',
             icon: <Shield size={32} />,
             path: '/modulo4',
-            linkPaper: '/papers/modulo4.pdf',
+            linkPaper: '/curso-ia/papers/modulo4.pdf',
         },
     ];
 
     return (
         <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-purple-500 selection:text-white relative overflow-x-hidden">
-            {/* Visual background effects isolated from content to avoid layout side effects */}
+            <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-slate-950/50 backdrop-blur-md border-b border-white/5">
+                <a
+                    href="/"
+                    className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full transition-all text-sm font-bold text-white/80 hover:text-white group border border-white/5"
+                    title="Volver al Menú Principal"
+                >
+                    <HomeIcon size={18} className="text-blue-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-mono tracking-[0.2em]">
+                        INICIO
+                    </span>
+                </a>
+
+                <div className="hidden md:block">
+                    <span className="text-[10px] font-mono text-gray-500 tracking-widest uppercase">
+                        UNAB • Facultad de Ingeniería
+                    </span>
+                </div>
+            </nav>
+
+            {/* Visual background effects */}
             <div className="fixed inset-0 -z-10">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black" />
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
             </div>
 
-            <header className="container mx-auto px-6 py-16 text-center relative z-10">
+            <header className="container mx-auto px-6 py-24 text-center relative z-10">
+                {/* Logo and faculty info */}
                 <div className="flex flex-col items-center justify-center mb-12 animate-fade-in-down">
                     <img
-                        src="/logo-unab.png"
+                        src="/curso-ia/logo-unab.png"
                         alt="Logo Universidad Andrés Bello"
                         className="h-16 md:h-20 mb-6 transition-opacity filter brightness-0 invert opacity-90"
                     />

@@ -26,21 +26,17 @@ import Module4 from './pages/Module4';
  */
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Routes>
-        {/* Main landing page of the platform */}
         <Route path="/" element={<Home />} />
-
-        {/* Bootcamp modules rendered via a slide-based engine */}
         <Route path="/modulo1" element={<Module1 />} />
         <Route path="/modulo2" element={<Module2 />} />
         <Route path="/modulo3" element={<Module3 />} />
         <Route path="/modulo4" element={<Module4 />} />
-
-        {/* Fallback route to redirect unknown paths to Home */}
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
+
   );
 }
 

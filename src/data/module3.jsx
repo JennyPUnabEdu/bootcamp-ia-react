@@ -133,7 +133,7 @@ export const slidesModule3 = [
         subtitle: 'ÉTICA Y PROYECTO FINAL',
         tagline: 'El último paso antes de graduarte del Bootcamp.',
         footer: 'PRÓXIMAMENTE',
-        nextLink: '/modulo4',
+        nextLink: '/curso-ia/modulo4',
         nextTitle: 'FINALIZAR'
     }
 ];

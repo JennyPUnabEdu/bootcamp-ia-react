@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
     Home,
     Terminal,
@@ -109,8 +111,8 @@ export const Layout = ({
             <header className="fixed top-0 w-full p-4 flex justify-between items-start z-50 pointer-events-none">
                 <div className="flex flex-col gap-2 pointer-events-auto">
                     {/* Home shortcut for quick exit from presentation mode */}
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full transition-all text-sm font-bold text-white/80 hover:text-white group"
                         title="Volver al Menú Principal"
                     >
@@ -119,7 +121,7 @@ export const Layout = ({
                             className="group-hover:-translate-x-1 transition-transform"
                         />
                         <span>INICIO</span>
-                    </a>
+                    </Link>
 
                     <div className="flex items-center gap-2 px-2 opacity-60">
                         <Terminal size={14} />
@@ -131,7 +133,7 @@ export const Layout = ({
 
                 <div className="flex flex-col items-end gap-4 pointer-events-auto">
                     <img
-                        src="/logo-unab.png"
+                        src="/curso-ia/logo-unab.png"
                         alt="Logo UNAB"
                         className="h-16 md:h-24 object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -176,8 +178,8 @@ export const Layout = ({
                     onClick={prevSlide}
                     disabled={currentSlide === 0}
                     className={`pointer-events-auto p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-md ${currentSlide === 0
-                            ? 'opacity-0 pointer-events-none'
-                            : 'opacity-100'
+                        ? 'opacity-0 pointer-events-none'
+                        : 'opacity-100'
                         }`}
                 >
                     <ArrowLeft size={20} className="md:w-6 md:h-6" />
@@ -188,8 +190,8 @@ export const Layout = ({
                         <div
                             key={idx}
                             className={`h-1.5 rounded-full transition-all ${idx === currentSlide
-                                    ? 'w-8 bg-white'
-                                    : 'w-2 bg-white'
+                                ? 'w-8 bg-white'
+                                : 'w-2 bg-white'
                                 }`}
                         />
                     ))}
@@ -199,8 +201,8 @@ export const Layout = ({
                     onClick={nextSlide}
                     disabled={currentSlide === totalSlides - 1}
                     className={`pointer-events-auto p-3 md:p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-md ${currentSlide === totalSlides - 1
-                            ? 'opacity-0 pointer-events-none'
-                            : 'opacity-100'
+                        ? 'opacity-0 pointer-events-none'
+                        : 'opacity-100'
                         }`}
                 >
                     <ArrowRight size={20} className="md:w-6 md:h-6" />

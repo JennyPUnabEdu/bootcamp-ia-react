@@ -162,7 +162,7 @@ export const slidesModule2 = [
         subtitle: 'EL ASISTENTE TE EVALÚA',
         tagline: 'Aprenderemos a crear cuestionarios dinámicos que se corrigen solos.',
         footer: '¡BIEN HECHO!',
-        nextLink: '/modulo3',
+        nextLink: '/curso-ia/modulo3',
         nextTitle: 'IR AL MÓDULO 3'
     }
 ];

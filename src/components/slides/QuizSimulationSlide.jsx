@@ -185,12 +185,12 @@ export const QuizSimulationSlide = ({ slide }) => {
                                         {isCorrect ? (
                                             <span className="text-emerald-400 flex gap-2 items-center">
                                                 <CheckCircle size={16} />
-                                                Correct
+                                                Correcto
                                             </span>
                                         ) : (
                                             <span className="text-orange-400 flex gap-2 items-center">
                                                 <HelpCircle size={16} />
-                                                Incorrect answer
+                                                Respuesta incorrecta
                                             </span>
                                         )}
                                     </div>
@@ -199,7 +199,7 @@ export const QuizSimulationSlide = ({ slide }) => {
                                         {isCorrect
                                             ? slide.quizData.explanation
                                             : slide.quizData.errorExplanation ||
-                                            'That is not the correct option. Review the concepts and try again.'}
+                                            'Esta no es la respuesta correcta. Revisa los conceptos y vuelve a intentarlo.'}
                                     </p>
                                 </div>
                             )}

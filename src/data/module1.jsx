@@ -30,8 +30,8 @@ export const slidesModule1 = [
         layout: 'art-challenge-slide',
         title: 'DESAFÍO DE ARTE',
         subtitle: '¿Pincel Humano o Píxel Matemático?',
-        imgReal: '/images/arte-real.jpg',
-        imgAI: '/images/arte-ia.jpg',
+        imgReal: '/curso-ia/images/arte-real.jpg',
+        imgAI: '/curso-ia/images/arte-ia.jpg',
         instruction: 'Pasa el mouse o haz clic para revelar la verdad. Fíjate en los trazos repetitivos.'
     },
     {
@@ -175,7 +175,7 @@ export const slidesModule1 = [
         subtitle: 'EXPLICACIONES IMPOSIBLES',
         tagline: 'Aprenderemos a transformar textos aburridos y difíciles en oro.',
         footer: '¡SIGUE ASÍ!',
-        nextLink: '/modulo2',
+        nextLink: '/curso-ia/modulo2',
         nextTitle: 'IR AL MÓDULO 2'
     }
 ];
