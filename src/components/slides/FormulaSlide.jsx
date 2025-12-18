@@ -94,7 +94,7 @@ export const FormulaSlide = ({ slide }) => {
                             className={`block font-bold mb-1 ${slide.formula[hoveredIndex].color}
                                         text-[10px] md:text-xs uppercase tracking-wider`}
                         >
-                            Definition
+                            Definición
                         </span>
                         {slide.formula[hoveredIndex].description}
                     </div>
