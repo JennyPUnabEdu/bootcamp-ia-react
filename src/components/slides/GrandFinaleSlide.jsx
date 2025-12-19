@@ -68,7 +68,7 @@ export const GrandFinaleSlide = ({ slide }) => {
                 </div>
             )}
             {bootStatus === 'standby' && (
-                <div className="z-10 flex flex-col items-center animate-fadeIn p-4 text-center relative">
+                <div className="fixed inset-0 w-full h-[100dvh] z-10 flex flex-col items-center justify-center p-4 text-center overflow-hidden overscroll-none animate-fadeIn">
                     <div className="mb-8">
                         <h2 className="text-amber-200/60 tracking-[0.3em] md:tracking-[0.5em] text-xs md:text-sm uppercase mb-2">
                             Compilación de Bootcamp IA v1.0
@@ -138,7 +138,7 @@ export const GrandFinaleSlide = ({ slide }) => {
                 </div>
             )}
             {bootStatus === 'online' && (
-                <div className="z-10 flex flex-col items-center text-center animate-zoomIn px-4 py-12 relative overflow-visible">
+                <div className="z-10 flex flex-col w-full max-w-lg items-center text-center animate-zoomIn px-8 py-12 relative overflow-visible">
                     <div className="mb-8 relative">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                                         w-[300px] h-[300px] bg-amber-500/20 blur-[80px]
@@ -152,7 +152,7 @@ export const GrandFinaleSlide = ({ slide }) => {
                             strokeWidth={1.5}
                         />
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-black text-transparent bg-clip-text
+                    <h1 className="text-4xl md:text-8xl font-black text-transparent bg-clip-text
                                    bg-gradient-to-b from-white via-amber-200 to-orange-400
                                    drop-shadow-2xl mb-8 tracking-tighter leading-none"
                     >

@@ -54,7 +54,7 @@ export const HeroSlide = ({ slide, theme = 'indigo' }) => {
                 </div>
             </div>
             <div className="space-y-4">
-                <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50 drop-shadow-sm leading-[0.9]">
+                <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50 drop-shadow-sm leading-tight md:leading-[0.9]">
                     {slide.title}
                 </h1>
                 <h2 className={`text-xl md:text-3xl font-bold ${s.subtitle} tracking-[0.2em] uppercase`}>

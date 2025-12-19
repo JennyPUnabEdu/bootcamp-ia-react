@@ -110,7 +110,7 @@ export const EthicsAccordionSlide = ({ slide }) => {
                                     <div className="absolute bottom-6 right-6 text-white/20 animate-bounce hidden md:block">
                                         <span className="text-2xl">↗</span>
                                     </div>
-                                    <div className="absolute bottom-4 right-4 text-white/20 md:hidden">
+                                    <div className="absolute top-4 right-4 text-white/20 md:hidden">
                                         <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
                                             Toca para expandir
                                         </span>

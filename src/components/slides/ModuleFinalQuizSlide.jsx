@@ -94,16 +94,13 @@ export const ModuleFinalQuizSlide = ({ slide }) => {
                         animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
                     }
                 `}</style>
-
-                <div className="w-full max-w-4xl mx-auto h-full flex flex-col items-center justify-center relative z-10 px-4">
-                    <div className="flex flex-col items-center justify-center h-full animate-fadeIn relative z-10">
-                        <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full transform scale-50 animate-pulse" />
-
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-200 mb-4 sm:mb-5 md:mb-6 text-center leading-tight sm:leading-snug md:leading-tight">
+                <div className="fixed inset-0 w-full h-[100dvh] flex flex-col items-center justify-center overflow-hidden overscroll-none z-10">
+                    <div className="relative w-full max-w-4xl px-4 flex flex-col items-center justify-center">
+                        <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full transform scale-50 animate-pulse pointer-events-none" />
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-200 mb-4 sm:mb-5 md:mb-6 text-center leading-tight sm:leading-snug md:leading-tight relative z-20">
                             {slide.title}
                         </h1>
-
-                        <div className="bg-slate-900/80 backdrop-blur-md border border-white/10 p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto text-center shadow-2xl transition-transform duration-300 md:hover:scale-105 px-4">
+                        <div className="bg-slate-900/80 backdrop-blur-md border border-white/10 p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto text-center shadow-2xl transition-transform duration-300 md:hover:scale-105 px-4 relative z-20">
                             <Brain size={64} className="text-cyan-400 mx-auto mb-6" />
                             <p className="text-xl text-indigo-200 mb-8 font-light">
                                 {slide.subtitle}
@@ -129,35 +126,32 @@ export const ModuleFinalQuizSlide = ({ slide }) => {
         const percentage = Math.round((score / totalQuestions) * 100);
 
         return (
-            <div className="flex flex-col items-center justify-center h-full animate-fadeIn relative z-10">
-                <div className={`absolute inset-0 bg-gradient-to-tr ${getOrbColor()} blur-[120px] opacity-40`} />
-
-                <div className="bg-slate-950/90 border border-white/20 p-10 rounded-[3rem] text-center max-w-2xl w-full shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-purple-500 to-blue-500" />
-
-                    <Trophy size={80} className="text-yellow-400 mx-auto mb-6 drop-shadow-glow animate-bounce" />
-
-                    <h2 className="text-5xl font-black text-white mb-2">
-                        {percentage === 100 ? 'SINCRONIZACIÓN LOGRADA' : 'ENTRENAMIENTO COMPLETADO'}
-                    </h2>
-
-                    <div className="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 my-8">
-                        {percentage}%
+            <div className="fixed inset-0 w-full h-[100dvh] flex items-center justify-center z-50 px-4 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" />
+                <div className="relative z-10 w-full max-w-2xl flex flex-col items-center animate-fadeIn">
+                    <div className={`absolute inset-0 bg-gradient-to-tr ${getOrbColor()} blur-[120px] opacity-40 pointer-events-none`} />
+                    <div className="bg-slate-950/90 border border-white/20 p-6 sm:p-10 rounded-3xl sm:rounded-[3rem] text-center w-full shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-purple-500 to-blue-500" />
+                        <Trophy className="text-yellow-400 mx-auto mb-6 drop-shadow-glow animate-bounce w-16 h-16 sm:w-20 sm:h-20" />
+                        <h2 className="text-3xl sm:text-5xl font-black text-white mb-2 break-words leading-tight">
+                            {percentage === 100 ? 'ENTRENAMIENTO COMPLETADO' : 'BUEN INTENTO!'}
+                        </h2>
+                        <div className="text-6xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 my-4 sm:my-8">
+                            {percentage}%
+                        </div>
+                        <p className="text-indigo-300 text-base sm:text-lg mb-6 sm:mb-8 px-2 sm:px-8">
+                            {percentage === 100
+                                ? 'Tu razonamiento es preciso y consistente, excelente trabajo.'
+                                : 'Buen intento. La mejora viene de la iteración.'}
+                        </p>
+                        <button
+                            onClick={restartGame}
+                            className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full border border-white/20 text-white font-mono hover:bg-white/10 transition-colors flex items-center justify-center gap-2 mx-auto text-sm sm:text-base"
+                        >
+                            <RefreshCcw size={16} />
+                            REINICIAR SIMULACIÓN
+                        </button>
                     </div>
-
-                    <p className="text-indigo-300 text-lg mb-8 px-8">
-                        {percentage === 100
-                            ? 'Tu razonamiento es preciso y consistente, excelente trabajo.'
-                            : 'Buen intento. La mejora viene de la iteración.'}
-                    </p>
-
-                    <button
-                        onClick={restartGame}
-                        className="px-8 py-3 rounded-full border border-white/20 text-white font-mono hover:bg-white/10 transition-colors flex items-center gap-2 mx-auto"
-                    >
-                        <RefreshCcw size={16} />
-                        REINICIAR SIMULACIÓN
-                    </button>
                 </div>
             </div>
         );
