@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual del Proyecto v1.1 - Bootcamp IA</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #002d56;
+            /* Azul Institucional Oscuro */
+            --secondary-color: #555555;
+            --accent-color: #b30000;
+            /* Rojo UNAB */
+            --code-bg: #f5f7f9;
+            --terminal-bg: #282c34;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #525659;
+            /* Fondo gris para vista web */
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            padding: 20mm 25mm;
+            box-sizing: border-box;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Tipografía */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 22pt;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 16pt;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            background-color: #f9f9f9;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 13pt;
+            margin-top: 25px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        p,
+        li {
+            font-size: 11pt;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        /* Listas */
+        ul,
+        ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Código */
+        code {
+            font-family: 'Source Code Pro', monospace;
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #d63384;
+            border: 1px solid #e0e0e0;
+        }
+
+        pre {
+            background-color: var(--terminal-bg);
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.85em;
+            margin: 15px 0;
+            border: 1px solid #444;
+            white-space: pre-wrap;
+            /* Ajuste de línea */
+        }
+
+        pre.config {
+            background-color: var(--code-bg);
+            color: #333;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Alertas */
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 6px solid;
+            border-radius: 4px;
+            font-size: 10.5pt;
+        }
+
+        .alert-info {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+            color: #0d47a1;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        /* Portada */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            border: 2px solid var(--primary-color);
+            padding: 40px;
+        }
+
+        .cover-logo {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            width: 80%;
+        }
+
+        .cover-title {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .cover-subtitle {
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            font-weight: 300;
+            margin-bottom: 100px;
+        }
+
+        .cover-meta {
+            width: 100%;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            border-bottom: 1px dotted #ccc;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .toc-link {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        /* Impresión */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .page {
+                width: 100%;
+                margin: 0;
+                padding: 20mm 15mm;
+                /* Márgenes de impresión */
+                box-shadow: none;
+                border: none;
+            }
+
+            .page-break {
+                break-after: page;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page page-break">
+        <div class="cover-page">
+            <div class="cover-logo">
+                UNIVERSIDAD ANDRÉS BELLO<br>
+                <span style="font-size: 0.5em; font-weight: 400; color: #555;">FACULTAD DE INGENIERÍA</span>
+            </div>
+
+            <div class="cover-title">MANUAL DEL PROYECTO</div>
+            <div class="cover-subtitle">Plataforma Bootcamp IA<br>"Herramientas de IA Generativa"</div>
+
+            <div class="cover-meta">
+                <div>
+                    <strong>Versión:</strong> 1.1
+                </div>
+                <div>
+                    <strong>Fecha:</strong> 19 Dic 2025
+                </div>
+                <div>
+                    <strong>Autor:</strong> Bastián Carrizo V.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page page-break">
+        <h1>Control del Documento</h1>
+
+        <h2>Historial de Versiones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Ver.</th>
+                    <th style="width: 15%;">Fecha</th>
+                    <th style="width: 25%;">Autor</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1.0</strong></td>
+                    <td>19/12/2025</td>
+                    <td>Bastián Carrizo V.</td>
+                    <td>Creación inicial del documento. Estructura base y manuales core.</td>
+                </tr>
+                <tr>
+                    <td><strong>1.1</strong></td>
+                    <td>19/12/2025</td>
+                    <td>Bastián Carrizo V.</td>
+                    <td>Incorporación de secciones académicas y detalles técnicos de despliegue (.htaccess, permisos).
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Índice de Contenidos</h2>
+        <ul class="toc-list">
+            <li><a href="#bloque1" class="toc-link">1. BLOQUE 1: DOCUMENTACIÓN GENERAL DEL PROYECTO</a></li>
+            <li><a href="#bloque2" class="toc-link">2. BLOQUE 2: MANUAL DE USUARIO</a></li>
+            <li><a href="#bloque3" class="toc-link">3. BLOQUE 3: MANUAL DE ANALISTA / TÉCNICO</a></li>
+            <li><a href="#bloque4" class="toc-link">4. BLOQUE 4: DESPLIEGUE Y OPERACIÓN</a></li>
+            <li><a href="#anexos" class="toc-link">5. ANEXOS (GLOSARIO)</a></li>
+        </ul>
+    </div>
+
+    <div class="page page-break" id="bloque1">
+        <h1>Bloque 1: Documentación General</h1>
+
+        <h2>1.1 Introducción</h2>
+        <p><strong>Bootcamp 360 Plataforma Cursos - IA</strong> es una plataforma web educativa de alto nivel,
+            interactiva y modular, diseñada para la enseñanza de herramientas de Inteligencia Artificial Generativa
+            (ChatGPT y Google Gemini) a estudiantes de ingeniería. Este proyecto fue desarrollado en el contexto de una
+            práctica profesional para la Facultad de Ingeniería de la UNAB.</p>
+        <p>La plataforma moderniza la experiencia de aprendizaje, reemplazando las presentaciones estáticas
+            tradicionales por un entorno web gamificado que simula interacciones reales con IA.</p>
+
+        <h2>1.2 Objetivos</h2>
+        <h3>Objetivo General</h3>
+        <p>Desarrollar una plataforma web interactiva que permita a los estudiantes experimentar y comprender el
+            funcionamiento de las IAs generativas mediante simulaciones prácticas y contenido dinámico.</p>
+        <h3>Objetivos Específicos</h3>
+        <ul>
+            <li><strong>Simulación Realista:</strong> Interfaces de chat simuladas para practicar Prompt Engineering.
+            </li>
+            <li><strong>Interactividad:</strong> Sistema de slides dinámicas (Slide Engine).</li>
+            <li><strong>Evaluación Automatizada:</strong> Quizzes y rúbricas con feedback inmediato.</li>
+            <li><strong>Acceso a Recursos:</strong> Centralización de material de estudio.</li>
+        </ul>
+
+        <h2>1.3 Alcance del Proyecto</h2>
+        <p>El sistema abarca una suite de aplicaciones "Single Page Application" (SPA) integradas bajo un mismo
+            enrutador. Incluye:</p>
+        <ul>
+            <li>Motor de Presentación JSON-driven.</li>
+            <li>Módulos temáticos independientes.</li>
+            <li>Modo Versus (Comparativas IA).</li>
+            <li>Sistema de Checklists y Rúbricas.</li>
+        </ul>
+
+        <h2>1.4 Público Objetivo</h2>
+        <ul>
+            <li><strong>Estudiantes de Ingeniería (UNAB):</strong> Usuarios finales.</li>
+            <li><strong>Cuerpo Docente:</strong> Apoyo en clases presenciales o remotas.</li>
+        </ul>
+
+        <h2>1.5 Stack Tecnológico</h2>
+        <ul>
+            <li><strong>Frontend:</strong> React 19 + Vite 7</li>
+            <li><strong>Estilos:</strong> Tailwind CSS 4</li>
+            <li><strong>Routing:</strong> React Router DOM 7</li>
+            <li><strong>Servidor:</strong> Apache 2 (Ubuntu AWS EC2)</li>
+        </ul>
+    </div>
+
+    <div class="page page-break">
+        <h2>1.6 Arquitectura General</h2>
+        <p>La arquitectura es una SPA servida estáticamente. <strong>Frontend-First:</strong> La lógica reside en el
+            cliente. <strong>Data-Driven:</strong> Contenido desacoplado. <strong>Sub-Directory:</strong> Despliegue en
+            <code>/curso-ia</code>.</p>
+
+        <h2>1.7 Diagrama Lógico</h2>
+        <ol>
+            <li><strong>Browser:</strong> Usuario pide URL.</li>
+            <li><strong>AWS EC2 (Apache):</strong> Recibe petición HTTP.</li>
+            <li><strong>Routing Servidor:</strong> Si URL inicia con <code>/curso-ia</code>, sirve
+                <code>index.html</code> React.</li>
+            <li><strong>React Init:</strong> Carga JS/CSS. React Router toma el control.</li>
+            <li><strong>Render:</strong> Generación dinámica de vista.</li>
+        </ol>
+
+        <h2>1.10 Roles y Responsabilidades</h2>
+        <table>
+            <tr>
+                <th>Rol</th>
+                <th>Responsabilidad</th>
+                <th>Perfil</th>
+            </tr>
+            <tr>
+                <td>SysAdmin</td>
+                <td>Mantenimiento servidor, Apache, DNS, Backups.</td>
+                <td>DevOps / Infra.</td>
+            </tr>
+            <tr>
+                <td>Dev Frontend</td>
+                <td>Mantenimiento React, nuevos módulos, bugs.</td>
+                <td>Dev React Semi-senior.</td>
+            </tr>
+            <tr>
+                <td>Editor</td>
+                <td>Edición de archivos JSON en <code>src/data/</code>.</td>
+                <td>Ayudante / Profesor.</td>
+            </tr>
+        </table>
+
+        <h2>1.11 Requisitos No Funcionales</h2>
+        <ul>
+            <li><strong>Disponibilidad:</strong> 24/7.</li>
+            <li><strong>Rendimiento:</strong> Carga < 3 segundos en 4G.</li>
+            <li><strong>Compatibilidad:</strong> Chrome, Firefox, Edge, Safari.</li>
+            <li><strong>Escalabilidad:</strong> Arquitectura modular para N módulos.</li>
+            <li><strong>Seguridad:</strong> Stateless (sin datos sensibles de usuario).</li>
+        </ul>
+
+        <h2>1.12 Limitaciones Conocidas</h2>
+        <div class="alert alert-warning">
+            <strong>Persistencia:</strong> Al ser una SPA stateless, el progreso se pierde al borrar caché, salvo
+            implementación futura de LocalStorage/Firebase.
+        </div>
+        <p><strong>Conexión:</strong> Requiere internet constante. <strong>Simulación:</strong> Los chats son
+            pre-programados, no consultan APIs reales.</p>
+    </div>
+
+    <div class="page page-break" id="bloque2">
+        <h1>Bloque 2: Manual de Usuario</h1>
+        <p>Bienvenido a la Plataforma de Aprendizaje IA. Este manual le guiará en el uso de la herramienta.</p>
+
+        <h2>2.3 Cómo acceder</h2>
+        <ol>
+            <li>Abra su navegador web (Chrome/Edge recomendado).</li>
+            <li>Ingrese a: <code>proyectos.icinf.icfunab.cl/curso-ia</code></li>
+            <li>Verá la pantalla de bienvenida.</li>
+        </ol>
+
+        <h2>2.4 Uso General</h2>
+        <p><strong>Inicio:</strong> Seleccione un módulo haciendo clic en "Iniciar Módulo".</p>
+        <p><strong>Navegación:</strong> Use las flechas laterales o los botones en pantalla para avanzar/retroceder. Use
+            el icono de "Casa" para volver al menú.</p>
+
+        <h2>2.6 Tipos de Diapositivas</h2>
+        <ul>
+            <li><strong>Informativas:</strong> Texto e imágenes estáticas.</li>
+            <li><strong>Simulaciones (Chat):</strong> Escriba o presione "Run" para interactuar con la IA simulada.</li>
+            <li><strong>Comparativas:</strong> Deslice controles para ver diferencias entre modelos.</li>
+        </ul>
+
+        <h2>2.8 Evaluaciones</h2>
+        <p>Responda los "Momentos de Quiz" seleccionando la opción correcta. Recibirá feedback inmediato sobre su
+            respuesta.</p>
+
+        <h2>2.9 Solución de Problemas</h2>
+        <ul>
+            <li><strong>Pantalla blanca:</strong> Recargue la página (F5).</li>
+            <li><strong>No avanza:</strong> Complete la interacción requerida en la slide.</li>
+            <li><strong>Error 404:</strong> Vuelva a la raíz <code>/curso-ia</code>.</li>
+        </ul>
+    </div>
+
+    <div class="page page-break" id="bloque3">
+        <h1>Bloque 3: Manual de Analista / Técnico</h1>
+
+        <h2>3.1 Arquitectura Frontend (Data-Driven)</h2>
+        <p>El proyecto separa lógica de contenido:</p>
+        <ul>
+            <li><strong>Datos:</strong> <code>src/data/</code> (Arrays de objetos JSON).</li>
+            <li><strong>Lógica:</strong> Componentes iteran sobre los datos para renderizar.</li>
+        </ul>
+        <p><strong>Routing:</strong> Se utiliza <code>react-router-dom</code> con un <code>basename</code> configurado
+            para el subdirectorio.</p>
+
+        <h2>3.3 Build & Producción</h2>
+        <p><strong>Vite Config:</strong> Propiedad <code>base: '/curso-ia/'</code> obligatoria.</p>
+        <p>Comando de compilación: <code>npm run build</code>. Genera la carpeta <code>dist/</code>.</p>
+
+        <h2>3.4 Configuración Apache (.htaccess)</h2>
+        <div class="alert alert-danger">
+            <strong>CRÍTICO:</strong> El archivo <code>.htaccess</code> es obligatorio en la carpeta pública para evitar
+            errores 404 al recargar páginas internas.
+        </div>
+        <p>Ubicación: <code>/var/www/proyectos.icinf.icfunab.cl/html/curso-ia/.htaccess</code></p>
+        <pre class="config">
+&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  # Base para reglas de reescritura
+  RewriteBase /curso-ia/
+  
+  # Si el archivo existe físicamente, servirlo
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Si no, redirigir a index.html (Client-Side Routing)
+  RewriteRule . /curso-ia/index.html [L]
+&lt;/IfModule&gt;</pre>
+
+        <h2>3.5 Git & Mantenimiento</h2>
+        <div class="alert alert-danger">
+            <strong>PELIGRO:</strong> NUNCA ejecutar <code>git pull</code> en la carpeta pública
+            (<code>html/curso-ia</code>). Esto mezclará código fuente con código compilado.
+        </div>
+        <p><strong>Flujo Correcto:</strong></p>
+        <ol>
+            <li>Ir a carpeta fuente: <code>cd /var/www/curso-ia</code></li>
+            <li><code>git pull</code></li>
+            <li><code>npm run build</code></li>
+            <li>Copiar dist: <code>cp -r dist/* [carpeta_publica]</code></li>
+        </ol>
+    </div>
+
+    <div class="page page-break" id="bloque4">
+        <h1>Bloque 4: Despliegue y Operación</h1>
+
+        <h2>4.1 Flujo Completo de Despliegue</h2>
+        <p>Siga estos pasos exactos para actualizar el sitio:</p>
+
+        <h3>1. Actualización de Código</h3>
+        <pre>
+ssh ubuntu@<IP_SERVIDOR>
+cd /var/www/curso-ia
+git pull origin main
+npm install  # (Solo si cambiaron dependencias)</pre>
+
+        <h3>2. Compilación</h3>
+        <pre>npm run build</pre>
+        <p>Esto actualiza la carpeta local <code>dist/</code>.</p>
+
+        <h3>3. Publicación</h3>
+        <pre>
+# Copiar contenido de dist a la carpeta web de Apache
+sudo cp -r dist/* /var/www/proyectos.icinf.icfunab.cl/html/curso-ia/</pre>
+
+        <h3>4. Permisos (Vital)</h3>
+        <pre>
+sudo chown -R www-data:www-data /var/www/proyectos.icinf.icfunab.cl/html/curso-ia
+sudo chmod -R 755 /var/www/proyectos.icinf.icfunab.cl/html/curso-ia</pre>
+        <p><em>Justificación: Apache (www-data) necesita ser dueño para servir archivos. 755 permite lectura pública
+                pero solo escritura por el dueño.</em></p>
+
+        <h2>4.3 Troubleshooting</h2>
+        <ul>
+            <li><strong>Cambios no visibles:</strong> Borrar caché del navegador. Verificar que se ejecutó el paso de
+                copia (cp).</li>
+            <li><strong>Error 404:</strong> Verificar existencia de <code>.htaccess</code> oculto en carpeta pública.
+            </li>
+            <li><strong>Forbidden (403):</strong> Re-aplicar comandos de permisos.</li>
+        </ul>
+
+        <h2>4.5 Respaldo (DR)</h2>
+        <p><strong>Fuente:</strong> Repositorio GitHub es la verdad única. <strong>Recuperación:</strong> Clonar repo +
+            <code>npm run build</code> (RTO < 30 min).</p>
+    </div>
+
+    <div class="page" id="anexos">
+        <h1>Anexos: Glosario</h1>
+        <dl>
+            <dt><strong>SPA (Single Page Application)</strong></dt>
+            <dd>Aplicación web que carga una sola página HTML y actualiza dinámicamente el contenido sin recargar.</dd>
+
+            <dt><strong>Vite</strong></dt>
+            <dd>Herramienta de construcción (bundler) de próxima generación para frontend.</dd>
+
+            <dt><strong>React Router</strong></dt>
+            <dd>Librería estándar para la navegación en aplicaciones React.</dd>
+
+            <dt><strong>VirtualHost</strong></dt>
+            <dd>Configuración de Apache para servir múltiples dominios desde un mismo servidor.</dd>
+
+            <dt><strong>Cache Busting</strong></dt>
+            <dd>Técnica de agregar hashes a los nombres de archivo para forzar la actualización en el navegador.</dd>
+
+            <dt><strong>Deploy</strong></dt>
+            <dd>Proceso de llevar el código a producción.</dd>
+
+            <dt><strong>EC2</strong></dt>
+            <dd>Servicio de servidores virtuales de AWS.</dd>
+
+            <dt><strong>Prompt Engineering</strong></dt>
+            <dd>Arte de diseñar instrucciones efectivas para guiar modelos de IA.</dd>
+        </dl>
+    </div>
+
+</body>
+
+</html>

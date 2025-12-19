@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp IA - Papers Completos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-print-color-adjust: exact;
+            background: #111827;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Configuración para impresión A4 estricta */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            .page-break {
+                break-after: page;
+            }
+
+            body {
+                background: white;
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        .paper-sheet {
+            width: 210mm;
+            height: 297mm;
+            /* Altura A4 exacta */
+            margin: 0 auto 2rem auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            background-color: #020617;
+            /* Slate 950 */
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Distribuye contenido para llenar hoja */
+            padding: 3rem;
+            padding-top: 1.5rem;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="py-10 bg-gray-900">
+
+    <div class="paper-sheet page-break">
+        <div class="absolute inset-0 bg-gradient-cover opacity-80 z-0"></div>
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[120px] -mr-32 -mt-32 z-0">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[100px] -ml-20 -mb-20 z-0">
+        </div>
+
+        <div class="absolute inset-0 z-0 opacity-10"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="content-area justify-center text-center relative z-10">
+
+            <div class="mb-10">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-xs font-mono tracking-widest text-emerald-300 uppercase">Documentación Oficial
+                        v1.0</span>
+                </div>
+
+                <h1 class="text-7xl font-black text-white leading-tight tracking-tight mb-2">
+                    MANUAL<br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">DE
+                        USUARIO</span>
+                </h1>
+
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto my-6 rounded-full"></div>
+
+                <h2 class="text-xl font-light text-slate-300 tracking-wide">
+                    Bootcamp 360: Herramientas de IA Generativa para Principiantes
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto w-full text-left">
+                <div class="bg-slate-900/60 backdrop-blur border border-white/10 p-5 rounded-xl">
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Carrera</p>
+                    <p class="font-bold text-white">Ingeniería en Computación e Informática</p>
+                </div>
+                <div class="bg-slate-900/60 backdrop-blur border border-white/10 p-5 rounded-xl">
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Fecha</p>
+                    <p class="font-bold text-white">Diciembre 2025</p>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.2em]">
+                    Facultad de Ingeniería • Universidad Andrés Bello
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="paper-sheet page-break">
+        <div class="content-area">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-6 mb-10">
+                <span class="text-6xl font-black text-white/10">01</span>
+                <div>
+                    <h3 class="text-cyan-400 font-mono text-xs tracking-widest uppercase">Bienvenida</h3>
+                    <h2 class="text-3xl font-black text-white">INTRODUCCIÓN</h2>
+                </div>
+            </div>
+
+            <div class="bg-slate-800/50 border border-white/10 p-8 rounded-2xl mb-8 backdrop-blur-sm">
+                <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="cpu" class="text-cyan-400"></i> ¿Qué es Bootcamp 360?
+                </h4>
+                <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                    Es parte de un módulo de cursos impartidos por UNAB en el Bootcamp 360. Herramientas de IA
+                    Generativa para Principiantes es un entorno de entrenamiento interactivo diseñado para reemplazar
+                    las presentaciones estáticas.
+                    Aquí aprenderás a dominar <strong>ChatGPT y Gemini</strong> mediante simulaciones prácticas.
+                    La plataforma utiliza una arquitectura <em>Single Page Application (SPA)</em> para ofrecer una
+                    experiencia fluida sin recargas.
+                </p>
+            </div>
+
+            <h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Requisitos del Sistema</h4>
+            <div class="grid grid-cols-3 gap-4 mb-auto">
+                <div
+                    class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl border border-white/5 flex flex-col items-center text-center">
+                    <i data-lucide="monitor" class="text-blue-400 w-8 h-8 mb-3"></i>
+                    <span class="text-xs font-bold text-white">PC / Tablet</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Recomendado</span>
+                </div>
+                <div
+                    class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl border border-white/5 flex flex-col items-center text-center">
+                    <i data-lucide="globe" class="text-purple-400 w-8 h-8 mb-3"></i>
+                    <span class="text-xs font-bold text-white">Navegador</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Chrome / Edge</span>
+                </div>
+                <div
+                    class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl border border-white/5 flex flex-col items-center text-center">
+                    <i data-lucide="wifi" class="text-emerald-400 w-8 h-8 mb-3"></i>
+                    <span class="text-xs font-bold text-white">Internet</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Conexión Estable</span>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-white/10 pt-8">
+                <p class="text-xs text-slate-400 mb-2 uppercase tracking-widest">URL de Acceso</p>
+                <div class="bg-black/30 border border-cyan-500/30 p-4 rounded-lg flex justify-between items-center">
+                    <code class="font-mono text-cyan-300">proyectos.icinf.icfunab.cl/curso-ia</code>
+                    <i data-lucide="external-link" class="text-cyan-500 w-4 h-4"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="paper-sheet page-break">
+        <div class="h-2 w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 absolute top-0 left-0 z-30">
+        </div>
+
+        <div class="content-area">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-6 mb-10">
+                <span class="text-6xl font-black text-white/10">02</span>
+                <div>
+                    <h3 class="text-purple-400 font-mono text-xs tracking-widest uppercase">Interfaz</h3>
+                    <h2 class="text-3xl font-black text-white">NAVEGACIÓN</h2>
+                </div>
+            </div>
+
+            <div class="relative bg-slate-900 border border-slate-700 rounded-xl p-6 mb-10 shadow-2xl">
+
+                <div
+                    class="aspect-video bg-slate-950 rounded-lg border border-slate-700 relative mb-4 flex flex-col justify-between overflow-hidden">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 opacity-90 z-0">
+                    </div>
+                    <div
+                        class="absolute -top-10 -left-10 w-48 h-48 bg-purple-600/30 rounded-full blur-3xl z-0 animate-pulse">
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-40 h-40 bg-pink-600/20 rounded-full blur-3xl z-0"></div>
+                    <div
+                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-0">
+                    </div>
+
+                    <div class="absolute top-0 left-0 w-full h-1 bg-slate-800 z-20">
+                        <div
+                            class="h-full w-1/3 bg-gradient-to-r from-cyan-400 to-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 w-full p-4 flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <div
+                                class="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full border border-white/5 w-fit backdrop-blur-md">
+                                <i data-lucide="home" class="w-3 h-3 text-blue-400"></i>
+                                <span class="text-[8px] font-bold text-white/80 tracking-wider">INICIO</span>
+                            </div>
+                            <div class="flex items-center gap-1 opacity-60 px-2 mt-1">
+                                <i data-lucide="terminal" class="w-3 h-3 text-white"></i>
+                                <span class="text-[7px] font-mono text-white tracking-widest">BOOTCAMP_IA</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-3 bg-black/20 px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">
+                            <span class="text-[9px] font-mono text-gray-400">1 / 10</span>
+                            <div class="h-3 w-px bg-white/20"></div>
+                            <i data-lucide="maximize-2" class="w-3 h-3 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex-1 flex items-center justify-center">
+                        <div class="text-center space-y-2">
+                            <div
+                                class="w-16 h-16 bg-white/5 rounded-full border border-white/10 flex items-center justify-center mx-auto backdrop-blur-xl shadow-2xl">
+                                <i data-lucide="box" class="text-indigo-400 w-8 h-8"></i>
+                            </div>
+                            <span
+                                class="block text-[10px] text-indigo-200 uppercase tracking-widest font-mono border border-indigo-500/30 px-3 py-1 rounded bg-indigo-500/10 backdrop-blur-sm">
+                                Área de Contenido
+                            </span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative z-10 w-full p-4 flex justify-between items-center bg-gradient-to-t from-black/60 to-transparent">
+                        <div
+                            class="p-2 rounded-full bg-white/5 border border-white/10 opacity-50 flex items-center justify-center">
+                            <i data-lucide="arrow-left" class="w-4 h-4 text-white"></i>
+                        </div>
+
+                        <div class="flex gap-1.5 opacity-50">
+                            <div class="w-4 h-1.5 bg-white rounded-full"></div>
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+
+                        <div
+                            class="p-2 rounded-full bg-white/10 border border-white/20 shadow-[0_0_15px_rgba(139,92,246,0.3)] flex items-center justify-center backdrop-blur-md">
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 text-center text-[10px] text-slate-400">
+                    <div class="border-t border-indigo-500/30 pt-3 mt-1">
+                        <span class="block text-indigo-400 font-bold mb-1 uppercase tracking-wider">Menú & Home</span>
+                        Salida rápida al índice
+                    </div>
+                    <div class="border-t border-indigo-500/30 pt-3 mt-1">
+                        <span class="block text-indigo-400 font-bold mb-1 uppercase tracking-wider">Área Visual</span>
+                        Interactúa con el contenido
+                    </div>
+                    <div class="border-t border-indigo-500/30 pt-3 mt-1">
+                        <span class="block text-indigo-400 font-bold mb-1 uppercase tracking-wider">Navegación</span>
+                        Avanza o retrocede
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+                <i data-lucide="wrench" class="text-slate-500 w-4 h-4"></i> Solución de Problemas
+            </h3>
+            <div class="border border-white/10 rounded-xl overflow-hidden shadow-lg">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-white/5 text-slate-400 uppercase font-mono border-b border-white/5">
+                        <tr>
+                            <th class="p-3 pl-4">Problema</th>
+                            <th class="p-3">Solución Rápida</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-slate-300 bg-slate-900/50">
+                        <tr>
+                            <td class="p-3 pl-4 font-bold text-red-300 flex items-center gap-2">
+                                <i data-lucide="monitor-off" class="w-3 h-3"></i> Pantalla Blanca
+                            </td>
+                            <td class="p-3">Presiona <strong>F5</strong> (Windows) o <strong>Cmd+R</strong> (Mac).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 pl-4 font-bold text-amber-300 flex items-center gap-2">
+                                <i data-lucide="lock" class="w-3 h-3"></i> No avanza
+                            </td>
+                            <td class="p-3">Completa el Quiz o Chat de la slide actual.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 pl-4 font-bold text-orange-300 flex items-center gap-2">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Error 404
+                            </td>
+                            <td class="p-3">Vuelve a la raíz: <code class="bg-black/30 px-1 rounded">/curso-ia/</code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="paper-sheet page-break">
+        <div class="content-area">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-6 mb-10">
+                <span class="text-6xl font-black text-white/10">03</span>
+                <div>
+                    <h3 class="text-pink-400 font-mono text-xs tracking-widest uppercase">Módulos</h3>
+                    <h2 class="text-3xl font-black text-white">HERRAMIENTAS</h2>
+                </div>
+            </div>
+
+            <div class="space-y-6 flex-1 flex flex-col justify-center">
+                <div
+                    class="flex gap-5 p-5 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-white/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0 border border-blue-500/30">
+                        <i data-lucide="message-square" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-1">Simulador de Chat</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-2">Entorno sandbox que imita a ChatGPT. No
+                            requiere cuentas externas. Escribe tu prompt y presiona "Run".</p>
+                        <span class="text-[10px] bg-blue-500/10 text-blue-300 px-2 py-1 rounded">Prompt
+                            Engineering</span>
+                    </div>
+                </div>
+
+                <div
+                    class="flex gap-5 p-5 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-white/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-orange-500/20 flex items-center justify-center shrink-0 border border-orange-500/30">
+                        <i data-lucide="swords" class="text-orange-400 w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-1">Modo Versus</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-2">Comparativa técnica lado a lado. Descubre
+                            las fortalezas de ChatGPT vs Gemini en tiempo real.</p>
+                        <span class="text-[10px] bg-orange-500/10 text-orange-300 px-2 py-1 rounded">Benchmark</span>
+                    </div>
+                </div>
+
+                <div
+                    class="flex gap-5 p-5 rounded-2xl bg-slate-800/50 border border-purple-500/30 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 p-4 opacity-10"><i data-lucide="gamepad-2"
+                            class="w-24 h-24 text-purple-500"></i></div>
+                    <div
+                        class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center shrink-0 border border-purple-500/30 relative z-10">
+                        <i data-lucide="brain-circuit" class="text-purple-400 w-7 h-7"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-bold text-white mb-1">Evaluación Neuronal</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-3">Nuevo sistema de quiz gamificado. El
+                            entorno reacciona visualmente a tus aciertos.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[9px] border border-white/20 text-slate-300 px-2 py-1 rounded">Orbe
+                                Reactivo</span>
+                            <span
+                                class="text-[9px] border border-white/20 text-slate-300 px-2 py-1 rounded">Combos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="paper-sheet page-break">
+        <div class="content-area">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-6 mb-8">
+                <span class="text-6xl font-black text-white/10">04</span>
+                <div>
+                    <h3 class="text-emerald-400 font-mono text-xs tracking-widest uppercase">Referencia</h3>
+                    <h2 class="text-3xl font-black text-white">CHEAT SHEET</h2>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-white/10 p-6 rounded-2xl mb-8">
+                <h4 class="text-center font-mono text-xs text-slate-500 uppercase tracking-widest mb-6">La Fórmula del
+                    Prompt Maestro</h4>
+
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-stretch">
+                        <div
+                            class="w-24 bg-blue-600 rounded-l-lg flex items-center justify-center text-xs font-bold uppercase tracking-wider">
+                            Rol</div>
+                        <div
+                            class="flex-1 bg-slate-800 p-4 rounded-r-lg border border-white/5 text-xs text-slate-300 italic">
+                            "Actúa como un Profesor Experto en Física..."</div>
+                    </div>
+                    <div class="mx-auto text-slate-600"><i data-lucide="plus" class="w-4 h-4"></i></div>
+                    <div class="flex items-stretch">
+                        <div
+                            class="w-24 bg-purple-600 rounded-l-lg flex items-center justify-center text-xs font-bold uppercase tracking-wider">
+                            Contexto</div>
+                        <div
+                            class="flex-1 bg-slate-800 p-4 rounded-r-lg border border-white/5 text-xs text-slate-300 italic">
+                            "...para un estudiante de primer año que odia las matemáticas..."</div>
+                    </div>
+                    <div class="mx-auto text-slate-600"><i data-lucide="plus" class="w-4 h-4"></i></div>
+                    <div class="flex items-stretch">
+                        <div
+                            class="w-24 bg-emerald-600 rounded-l-lg flex items-center justify-center text-xs font-bold uppercase tracking-wider">
+                            Tarea</div>
+                        <div
+                            class="flex-1 bg-slate-800 p-4 rounded-r-lg border border-white/5 text-xs text-slate-300 italic">
+                            "...explica la Ley de Ohm usando una analogía de agua."</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-auto">
+                <div class="bg-red-900/10 border border-red-500/20 p-5 rounded-xl">
+                    <h5 class="text-red-400 font-bold text-xs uppercase mb-2 flex items-center gap-2"><i
+                            data-lucide="alert-triangle" class="w-4 h-4"></i> Alucinaciones</h5>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">
+                        La IA inventa datos. Nunca confíes en fechas, citas bibliográficas o leyes sin verificar en
+                        Google.
+                    </p>
+                </div>
+                <div class="bg-amber-900/10 border border-amber-500/20 p-5 rounded-xl">
+                    <h5 class="text-amber-400 font-bold text-xs uppercase mb-2 flex items-center gap-2"><i
+                            data-lucide="shield" class="w-4 h-4"></i> Integridad</h5>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">
+                        Eres el capitán, la IA es el copiloto. Nunca copies y pegues texto generado directamente en
+                        trabajos finales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center border-t border-white/10 pt-6">
+                <p class="text-[10px] font-mono text-slate-600">Facultad de Ingeniería • UNAB • Ingenieria en
+                    Computación e Informática
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
