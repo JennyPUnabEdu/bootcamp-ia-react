@@ -276,11 +276,13 @@ Este procedimiento actualiza la versión pública de la plataforma.
     ```
     Esto actualiza la carpeta `/var/www/curso-ia/dist`.
 6.  **Desplegar a Público:**
-    Copiar el contenido de `dist` al directorio web de Apache.
+    Copiar el contenido de `dist` al directorio web de Apache y borrar el build antiguo.
     *Nota: Se recomienda limpiar el destino antes o usar rsync, pero un cp recursivo suele bastar si no se borraron archivos.*
     ```bash
     # (Opcional) Backup de versión anterior
     # sudo cp -r /var/www/proyectos.icinf.icfunab.cl/html/curso-ia /var/www/backups/curso-ia-bkp
+    # Borrar build antiguo (Para eliminar archivos basura)
+    sudo rm -rf /var/www/proyectos.icinf.icfunab.cl/html/curso-ia/*
     # Copiar archivos nuevos (sobrescribir)
     sudo cp -r dist/* /var/www/proyectos.icinf.icfunab.cl/html/curso-ia/
     ```
@@ -327,3 +329,4 @@ Dado que la aplicación es *stateless* (sin base de datos propia crítica), la e
 *   **Deploy:** Proceso de llevar el código desde el entorno de desarrollo al servidor de producción donde los usuarios pueden usarlo.
 *   **EC2 (Elastic Compute Cloud):** Servicio de servidores virtuales en la nube de Amazon Web Services (AWS).
 *   **Prompt Engineering:** Arte de diseñar entradas (prompts) efectivas para guiar a los modelos de Inteligencia Artificial Generativa.
+
